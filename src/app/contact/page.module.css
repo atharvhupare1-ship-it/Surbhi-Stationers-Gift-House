@@ -1,0 +1,290 @@
+/* ============================================
+   CONTACT PAGE STYLES — DOMS-Inspired Bold Theme
+   ============================================ */
+
+/* Header */
+.header {
+    background: var(--gradient-hero);
+    padding: 10rem 0 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 184, 0, 0.12) 0%, transparent 70%);
+    top: -100px;
+    left: -100px;
+}
+
+.title {
+    font-size: var(--text-5xl);
+    color: #ffffff;
+    margin-bottom: var(--space-md);
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.75;
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+    opacity: 0;
+}
+
+/* Contact Section */
+.contactSection {
+    padding-top: var(--space-3xl);
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+/* Info Column */
+.infoColumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.infoCard {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.infoCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
+.infoIcon {
+    font-size: 1.5rem;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.infoCard:nth-child(1) .infoIcon {
+    background: var(--color-red-bg);
+}
+
+.infoCard:nth-child(2) .infoIcon {
+    background: var(--color-green-bg);
+}
+
+.infoCard:nth-child(3) .infoIcon {
+    background: var(--color-yellow-bg);
+}
+
+.infoCard:nth-child(4) .infoIcon {
+    background: var(--color-sky-bg);
+}
+
+/* Different hover border colors */
+.infoCard:nth-child(1):hover {
+    border-left: 3px solid var(--color-red);
+}
+
+.infoCard:nth-child(2):hover {
+    border-left: 3px solid var(--color-green);
+}
+
+.infoCard:nth-child(3):hover {
+    border-left: 3px solid var(--color-yellow);
+}
+
+.infoCard:nth-child(4):hover {
+    border-left: 3px solid var(--color-sky);
+}
+
+.infoCard h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.infoCard p {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.65;
+}
+
+.infoCard a {
+    color: var(--color-red);
+    font-weight: 700;
+    transition: color var(--transition-fast);
+}
+
+.infoCard a:hover {
+    color: var(--color-red-dark);
+}
+
+/* Form */
+.formCard {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+}
+
+.formTitle {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.formSubtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+}
+
+.successMsg {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-green-bg);
+    border: 1.5px solid rgba(0, 183, 74, 0.2);
+    color: var(--color-green);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formGroup label {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.formGroup input,
+.formGroup textarea {
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+    transition: all var(--transition-base);
+    outline: none;
+    resize: vertical;
+    font-weight: 500;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+    background: var(--color-surface);
+}
+
+/* Map */
+.mapSection {
+    margin-top: var(--space-4xl);
+}
+
+.mapTitle {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.mapTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 5px;
+    background: var(--gradient-rainbow);
+    border-radius: var(--radius-full);
+}
+
+.mapWrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--color-border-light);
+}
+
+.mapWrapper iframe {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 8rem 0 3rem;
+    }
+
+    .infoCard {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .formCard {
+        padding: var(--space-xl);
+    }
+}

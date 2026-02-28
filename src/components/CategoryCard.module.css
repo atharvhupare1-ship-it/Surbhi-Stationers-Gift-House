@@ -1,0 +1,112 @@
+.card {
+    display: block;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    position: relative;
+    box-shadow: var(--shadow-md);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(28, 28, 28, 0.9) 0%,
+            rgba(28, 28, 28, 0.4) 40%,
+            rgba(28, 28, 28, 0.05) 100%);
+    transition: background var(--transition-base);
+}
+
+.card:hover .overlay {
+    background: linear-gradient(to top,
+            rgba(28, 28, 28, 0.95) 0%,
+            rgba(28, 28, 28, 0.55) 50%,
+            rgba(28, 28, 28, 0.15) 100%);
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xl) var(--space-lg);
+    color: #ffffff;
+    z-index: 2;
+}
+
+.name {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: var(--space-xs);
+}
+
+.description {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all var(--transition-base);
+}
+
+.card:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-yellow);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.explore svg {
+    transition: transform var(--transition-spring);
+}
+
+.card:hover .explore svg {
+    transform: translateX(6px);
+}
+
+@media (max-width: 640px) {
+    .name {
+        font-size: var(--text-xl);
+    }
+
+    .description {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
